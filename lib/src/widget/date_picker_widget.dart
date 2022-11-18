@@ -1,11 +1,11 @@
 import 'dart:math';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-import '../date_time_formatter.dart';
-import '../date_picker_theme.dart';
 import '../date_picker_constants.dart';
+import '../date_picker_theme.dart';
+import '../date_time_formatter.dart';
 import '../i18n/date_picker_i18n.dart';
 import 'date_picker_title_widget.dart';
 
@@ -232,6 +232,19 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
           scrollController: scrollCtrl,
           itemExtent: widget.pickerTheme.itemHeight,
           onSelectedItemChanged: valueChanged,
+          selectionOverlay: Container(
+            child: Column(
+              children: [
+                Divider(
+                  height: 0.5,
+                ),
+                Expanded(child: SizedBox()),
+                Divider(
+                  height: 0.5,
+                )
+              ],
+            ),
+          ),
           childCount: valueRange?.last == null || valueRange?.first == null
               ? null
               : valueRange!.last - valueRange.first + 1,
