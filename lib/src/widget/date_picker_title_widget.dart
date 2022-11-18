@@ -28,7 +28,10 @@ class DatePickerTitleWidget extends StatelessWidget {
     }
     return Container(
       height: pickerTheme.titleHeight,
-      decoration: BoxDecoration(color: pickerTheme.backgroundColor),
+      decoration: BoxDecoration(
+          color: pickerTheme.backgroundColor,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10), topRight: Radius.circular(10))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
